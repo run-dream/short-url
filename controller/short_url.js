@@ -3,8 +3,6 @@
 const {encode, decode} = require('../service/short_url')
 module.exports = {
     encode: async ctx=>{
-        console.log('encode')
-        console.log(ctx.request.href)
         const url = ctx.request.query.url;
         const key = await encode(url);
         ctx.body = {
